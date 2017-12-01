@@ -6,11 +6,11 @@
 - Winayaka Ruhur Sandhya Pamungkas - 1606890561
 
 ## Status Aplikasi
-[![pipeline status](https://gitlab.com/KelompokB10PPW2017/konekin/badges/master/pipeline.svg)](https://gitlab.com/KelompokB10PPW2017/konekin-enterprise/commits/master)
-[![coverage report](https://gitlab.com/KelompokB10PPW2017/konekin/badges/master/coverage.svg)](https://gitlab.com/KelompokB10PPW2017/konekin-enterprise/commits/master)
+[![pipeline status](https://gitlab.com/KelompokB10PPW2017/konekin-enterprise/badges/master/pipeline.svg)](https://gitlab.com/KelompokB10PPW2017/konekin-enterprise/commits/master)
+[![coverage report](https://gitlab.com/KelompokB10PPW2017/konekin-enterprise/badges/master/coverage.svg)](https://gitlab.com/KelompokB10PPW2017/konekin-enterprise/commits/master)
 
 ## Link Heroku App
-[https://konekin.herokuapp.com/](https://konekin-enterprise.herokuapp.com/)
+[https://konekin-enterprise.herokuapp.com/](https://konekin-enterprise.herokuapp.com/)
 
 ## Pembagian Tugas
 - Alya Putri - 
