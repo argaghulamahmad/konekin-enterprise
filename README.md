@@ -17,6 +17,6 @@
 - Arga Ghulam Ahmad - 
 - Claudio Yosafat - 
 - Winayaka Ruhur Sandhya Pamungkas - 
-- 
+
 ## Catatan Tambahan Antar Anggota Kelompok
 
