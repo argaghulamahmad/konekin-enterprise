@@ -20,5 +20,12 @@
 - Winayaka Ruhur Sandhya Pamungkas - Menanggapi Lowongan Kerja di Halaman Utama - social
 
 ## Catatan Tambahan Antar Anggota Kelompok
+1. Penggunaan app main.
+	Untuk beberapa feature yang beririsan antar anggota gunakan app 'main'.
+	Contoh :
+	- 'models.py' digunakan untuk model yang digunakan hampir di setiap app.
 
+2. Username dan password admin konekin-enterprise
+    Buka 'http://konekin.herokuapp.com/admin' atau 'localhost:8000/admin'.
+    Masukkan username : 'adminkonekin' dan password : 'adminpass'.
 
