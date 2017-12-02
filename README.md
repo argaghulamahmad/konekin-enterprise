@@ -1,4 +1,4 @@
-# Konekin Enterprise - Tugas 2 Kelompok 10 Kelas B PPW 2017
+# Konekin Enterprise - Tugas 2 Kelompok 10b Kelas B PPW 2017
 ## Anggota Kelompok
 - Alya Putri - 1606836471
 - Arga Ghulam Ahmad - 1606821601
@@ -13,10 +13,11 @@
 [https://konekin-enterprise.herokuapp.com/](https://konekin-enterprise.herokuapp.com/)
 
 ## Pembagian Tugas
-- Alya Putri - 
-- Arga Ghulam Ahmad - 
-- Claudio Yosafat - 
-- Winayaka Ruhur Sandhya Pamungkas - 
+- Alya Putri - Halaman Forum Lowongan Kerja
+- Arga Ghulam Ahmad - Halaman Profil Perusahaan
+- Claudio Yosafat - Halaman Utama dan Fitur Login Perusahaan
+- Winayaka Ruhur Sandhya Pamungkas - Menanggapi Lowongan Kerja di Halaman Utama
 
 ## Catatan Tambahan Antar Anggota Kelompok
+
 
