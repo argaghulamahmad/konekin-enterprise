@@ -34,3 +34,6 @@
     - aplikasi profil menggunakan url(r'^profil/', ...)
     - aplikasi login menggunakan url(r^login/' ...)
     - aplikasi social menggunakan url(r^social/' ...)
+
+4. Linkedin Company Page
+   [Konekin Enterprise Linkedin Page](https://www.linkedin.com/company/konekin-enterprise/ "Konekin Enterprise Linkedin Page")
