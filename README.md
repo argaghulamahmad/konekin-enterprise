@@ -15,7 +15,7 @@
 ## Pembagian Tugas
 ### Format: Nama Anggota - Fitur - Aplikasi
 - Alya Putri - Halaman Forum Lowongan Kerja - forum
-- Arga Ghulam Ahmad - Halaman Profil Perusahaan - profile
+- Arga Ghulam Ahmad - Halaman Profil Perusahaan - profil
 - Claudio Yosafat - Halaman Utama dan Fitur Login Perusahaan - login
 - Winayaka Ruhur Sandhya Pamungkas - Menanggapi Lowongan Kerja di Halaman Utama - social
 
