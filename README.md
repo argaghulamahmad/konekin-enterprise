@@ -26,7 +26,7 @@
 	- 'models.py' digunakan untuk model yang digunakan hampir di setiap app.
 
 2. Username dan password admin konekin-enterprise
-    Buka 'http://konekin.herokuapp.com/admin' atau 'localhost:8000/admin'.
+    Buka 'http://konekin-enterprise.herokuapp.com/admin' atau 'localhost:8000/admin'.
     Masukkan username : 'adminkonekin' dan password : 'adminpass'.
 
 3. Pengaturan urls app project konekin-enterprise
