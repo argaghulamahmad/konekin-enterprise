@@ -29,3 +29,8 @@
     Buka 'http://konekin.herokuapp.com/admin' atau 'localhost:8000/admin'.
     Masukkan username : 'adminkonekin' dan password : 'adminpass'.
 
+3. Pengaturan urls app project konekin-enterprise
+    - aplikasi forum menggunakan url(r'^forum/', ...)
+    - aplikasi profil menggunakan url(r'^profil/', ...)
+    - aplikasi login menggunakan url(r^login/' ...)
+    - aplikasi social menggunakan url(r^social/' ...)
