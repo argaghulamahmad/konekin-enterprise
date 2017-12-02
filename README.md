@@ -13,10 +13,11 @@
 [https://konekin-enterprise.herokuapp.com/](https://konekin-enterprise.herokuapp.com/)
 
 ## Pembagian Tugas
-- Alya Putri - Halaman Forum Lowongan Kerja
-- Arga Ghulam Ahmad - Halaman Profil Perusahaan
-- Claudio Yosafat - Halaman Utama dan Fitur Login Perusahaan
-- Winayaka Ruhur Sandhya Pamungkas - Menanggapi Lowongan Kerja di Halaman Utama
+### Format: Nama Anggota - Fitur - Aplikasi
+- Alya Putri - Halaman Forum Lowongan Kerja - forum
+- Arga Ghulam Ahmad - Halaman Profil Perusahaan - profile
+- Claudio Yosafat - Halaman Utama dan Fitur Login Perusahaan - login
+- Winayaka Ruhur Sandhya Pamungkas - Menanggapi Lowongan Kerja di Halaman Utama - social
 
 ## Catatan Tambahan Antar Anggota Kelompok
 
