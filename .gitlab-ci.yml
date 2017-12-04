@@ -20,7 +20,7 @@ UnitTest:
       - python manage.py runserver 8000 &
     when: on_success
     script:
-        - coverage run --include='*' manage.py test
+        - coverage run --include='company_forum/*','company_jobs/*','company_profile/*','company_login/*','main/*' manage.py test
         - coverage report -m
 
 Deployment:
