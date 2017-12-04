@@ -1,0 +1,66 @@
+{% extends "layout/base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% block content %}
+<div class="container" id="main-area-container">
+    <div class="col-md-4 col-xs-6 col-centered" id="company-logo-area">
+        <div id="company-logo-div-area"><img class="img-circle img-responsive"
+                                             src="{% static "img/konekin-enterprise-logo.png" %}" id="company-logo"></div>
+    </div>
+    <div class="col-md-8 col-xs-12" id="main-up-area">
+        <h1 id="company-name">Konekin Enterprise</h1>
+        <div id="main-info-area">
+            <p class="text-left">Computer Software</p>
+            <div>
+                <button class="btn btn-default" type="button">See Forum</button>
+                <button class="btn btn-default" type="button">Find College Student</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" id="submain-area-container">
+    <div class="col-md-4 col-xs-6" id="sidebar1-column">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="text-center panel-title">Company Info</h3></div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h3>Website </h3>
+                        <p><a href="https://www.linkedin.com/company/konekin-enterprise/">Konekin Enterprise</a></p>
+                    </li>
+                    <li class="list-group-item">
+                        <h3>Headquarters </h3>
+                        <p>Kota Depok, Jawa Barat</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h3>Year Founded</h3>
+                        <p>2017 </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h3>Company Type</h3>
+                        <p>Self-Employed </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h3>Company Size</h3>
+                        <p>2-10 employees</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h3>Specialities </h3>
+                        <p>Web Application Development</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 col-xs-12" id="sidebar2-column">
+        <div class="jumbotron">
+            <h3>Company Description</h3>
+            <div>
+                <p id="company-description">This linkedin company page created to accomplish our college group (Kelompok
+                    B 10 PPW 2017') assignment. </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
