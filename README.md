@@ -14,26 +14,21 @@
 
 ## Pembagian Tugas
 ### Format: Nama Anggota - Fitur - Aplikasi
-- Alya Putri - Halaman Forum Lowongan Kerja - forum
-- Arga Ghulam Ahmad - Halaman Profil Perusahaan - profil
-- Claudio Yosafat - Halaman Utama dan Fitur Login Perusahaan - login
-- Winayaka Ruhur Sandhya Pamungkas - Menanggapi Lowongan Kerja di Halaman Utama - social
+- Alya Putri - Halaman Forum Lowongan Kerja - company_forum
+- Arga Ghulam Ahmad - Halaman Profil Perusahaan - company_profile
+- Claudio Yosafat - Halaman Utama dan Fitur Login Perusahaan - company_login
+- Winayaka Ruhur Sandhya Pamungkas - Menanggapi Lowongan Kerja di Halaman Utama - company_jobs
 
 ## Catatan Tambahan Antar Anggota Kelompok
-1. Penggunaan app main.
-	Untuk beberapa feature yang beririsan antar anggota gunakan app 'main'.
-	Contoh :
-	- 'models.py' digunakan untuk model yang digunakan hampir di setiap app.
-
-2. Username dan password admin konekin-enterprise
+1. Username dan password admin konekin-enterprise
     Buka 'http://konekin-enterprise.herokuapp.com/admin' atau 'localhost:8000/admin'.
     Masukkan username : 'adminkonekin' dan password : 'adminpass'.
 
-3. Pengaturan urls app project konekin-enterprise
-    - aplikasi forum menggunakan url(r'^forum/', ...)
-    - aplikasi profil menggunakan url(r'^profil/', ...)
-    - aplikasi login menggunakan url(r^login/' ...)
-    - aplikasi social menggunakan url(r^social/' ...)
+2. Pengaturan urls app project konekin-enterprise
+    - aplikasi company_forum menggunakan url(r'^company/forum/', ...)
+    - aplikasi company_profile menggunakan url(r'^company/profile/', ...)
+    - aplikasi company_login menggunakan url(r'^$'/' ...)
+    - aplikasi company_jobs menggunakan url(r^$/' ...)
 
-4. Linkedin Company Page
+3. Linkedin Company Page
    [Konekin Enterprise Linkedin Page](https://www.linkedin.com/company/konekin-enterprise/ "Konekin Enterprise Linkedin Page")
