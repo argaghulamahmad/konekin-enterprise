@@ -1,10 +1,12 @@
 from django.test import TestCase
+from django.urls import reverse
+
 from .models import *
 
 
 class CompanyProfileAppTest(TestCase):
-    def test_model_company_account(self):
-        new_company_account = CompanyAccount.objects.create(
+    def setUp(self):
+         self.company = CompanyAccount.objects.create(
             company_id="13597930",
             company_name="Konekin Enterprise",
             company_industries="Computer Software",
@@ -18,6 +20,13 @@ class CompanyProfileAppTest(TestCase):
             company_logo="https://media.licdn.com/mpr/mpr/shrink_200_200/AAIAAwDGAAoAAQAAAAAAAArvAAAAJDM1OGUyZGRiLTcxMWUtNGQzZC1hNWY3LWJjZDlhM2ZhNzA3Ng.png",
         )
 
+    def test_model_company_account(self):
         counting_all_company_account = CompanyAccount.objects.all().count()
-        self.assertEqual(new_company_account.__str__(), "Konekin Enterprise")
+        self.assertEqual(self.company.__str__(), "Konekin Enterprise")
         self.assertEqual(counting_all_company_account, 1)
+
+    def test_company_detail(self):
+        response = self.client.post(reverse('company-profile:company-detail', kwargs={'id': '13597930'}))
+        html_response = response.content.decode('utf8')
+        self.assertIn("Konekin Enterprise", html_response)
+        self.assertEqual(response.status_code, 200)
