@@ -17,4 +17,5 @@ class CompanyProfileAppTest(TestCase):
                                                             )
 
         counting_all_company_account = CompanyAccount.objects.all().count()
+        self.assertEqual(new_company_account.__str__(), "Konekin Enterprise")
         self.assertEqual(counting_all_company_account, 1)
