@@ -11,3 +11,6 @@ class CompanyAccount(models.Model):
     company_specialties = models.CharField(max_length=100)
     company_description = models.TextField()
     company_logo = models.URLField()
+
+    def __str__(self):
+        return self.company_name
