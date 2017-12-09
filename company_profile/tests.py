@@ -13,7 +13,7 @@ class CompanyProfileAppTest(TestCase):
                                                             company_size="2-10 employees",
                                                             company_specialties="Web App Development",
                                                             company_description="This linkedin company page created to accomplish our college group ('https://gitlab.com/KelompokB10PPW2017') assignment.",
-                                                            company_url="https://media.licdn.com/mpr/mpr/shrink_200_200/AAIAAwDGAAoAAQAAAAAAAArvAAAAJDM1OGUyZGRiLTcxMWUtNGQzZC1hNWY3LWJjZDlhM2ZhNzA3Ng.png",
+                                                            company_logo="https://media.licdn.com/mpr/mpr/shrink_200_200/AAIAAwDGAAoAAQAAAAAAAArvAAAAJDM1OGUyZGRiLTcxMWUtNGQzZC1hNWY3LWJjZDlhM2ZhNzA3Ng.png",
                                                             )
 
         counting_all_company_account = CompanyAccount.objects.all().count()
