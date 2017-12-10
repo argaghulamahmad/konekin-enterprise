@@ -1,0 +1,9 @@
+footer {
+    display: block;
+    position: absolute;
+    background-color: transparent; /*edit*/
+    text-align: left;
+    padding: 1rem 1rem; /*edit*/
+    color: #2b7a78;
+    width: 100%;
+}
