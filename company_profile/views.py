@@ -1,7 +1,9 @@
 from django.shortcuts import render
+
 from .models import CompanyAccount
 
 response = {}
+
 
 def company_detail(request, id):
     html = "layout/company_profile.html"
@@ -21,3 +23,20 @@ def company_detail(request, id):
     response['is_company_profile_html'] = True
 
     return render(request, html, response)
+
+
+def create_company_account(id, name, industries, website, headquarters,
+                           year_founded, type, size, specialties, description, logo_url):
+    CompanyAccount.objects.create(
+        company_id=id,
+        company_name=name,
+        company_industries=industries,
+        company_website=website,
+        company_headquarters=headquarters,
+        company_year_founded=year_founded,
+        company_type=type,
+        company_size=size,
+        company_specialties=specialties,
+        company_description=description,
+        company_logo=logo_url,
+    )
