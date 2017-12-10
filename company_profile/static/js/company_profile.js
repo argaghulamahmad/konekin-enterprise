@@ -1,7 +1,11 @@
 //Google Maps API
 var address = $("#company-location").text();
-console.log(address);
 var isInitMapWork = false;
+var isMapMarkerWork = false;
+
+
+console.log("Company Address: ");
+console.log(address);
 
 function initMap() {
     var geocoder = new google.maps.Geocoder();
@@ -17,11 +21,13 @@ function initMap() {
                 map: peta,
                 position: results[0].geometry.location
             });
+            isMapMarkerWork = true;
         } else {
             var html = '<div class="alert alert-danger text-center">' +
                 'Location Not Found!' +
                 '</div>';
             $("#googleMap").append(html)
+            isMapMarkerWork = true;
         }
     });
     isInitMapWork = true;
@@ -30,5 +36,9 @@ function initMap() {
 $(document).ready(function () {
     QUnit.test("initMap Function Test", function (assert) {
         assert.equal(isInitMapWork, true);
+    });
+
+    QUnit.test("Is Map Marker Work Test", function (assert) {
+        assert.equal(isMapMarkerWork, true);
     });
 });
