@@ -1,2 +1,2 @@
 migrate: bash deployment.sh
-web: gunicorn konekin.wsgi --log-file -
+web: gunicorn konekin-enterprise.wsgi --log-file -
