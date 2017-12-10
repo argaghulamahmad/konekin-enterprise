@@ -1,6 +1,7 @@
-//google map api
-console.log($("#company-location").text());
+//Google Maps API
 var address = $("#company-location").text();
+console.log(address);
+var isInitMapWork = false;
 
 function initMap() {
     var geocoder = new google.maps.Geocoder();
@@ -23,4 +24,11 @@ function initMap() {
             $("#googleMap").append(html)
         }
     });
+    isInitMapWork = true;
 }
+
+$(document).ready(function () {
+    QUnit.test("initMap Function Test", function (assert) {
+        assert.equal(isInitMapWork, true);
+    });
+});

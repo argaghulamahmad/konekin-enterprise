@@ -10,6 +10,7 @@ def company_detail(request, id):
 
     selected_company = CompanyAccount.objects.get(company_id=id)
 
+    response['sub_title'] = selected_company.company_name + ' Profil Page'
     response['company_name'] = selected_company.company_name
     response['company_industries'] = selected_company.company_industries
     response['company_website'] = selected_company.company_website
