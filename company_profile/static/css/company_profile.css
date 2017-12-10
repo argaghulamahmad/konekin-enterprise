@@ -79,13 +79,13 @@ span#footer-text.text-uppercase.text-primary.hidden-xs {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     div#company-logo-div-area {
         margin: 0 auto;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     img#company-logo.img-circle.img-responsive {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -100,14 +100,14 @@ div#main-up-area.col-md-8.col-xs-12 {
     padding-top: 30px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     div#company-logo-area.col-md-4.col-xs-6.col-centered {
         margin: 0 auto;
         float: none;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     div#sidebar1-column.col-md-4.col-xs-6 {
         width: auto;
         float: none;
@@ -154,6 +154,22 @@ u, a {
 @media (max-width: 767px) {
     #googleMap {
         width: 300px;
+        height: 300px;
+        margin: 50px auto 0 auto;
+    }
+}
+
+@media (max-width: 320px) {
+    #googleMap {
+        width: 200px;
+        height: 300px;
+        margin: 50px auto 0 auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1025px) {
+    #googleMap {
+        width: 500px;
         height: 300px;
         margin: 50px auto 0 auto;
     }
