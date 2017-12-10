@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
+from company_profile.views import *
 
 from .models import *
 
@@ -30,3 +31,12 @@ class CompanyProfileAppTest(TestCase):
         html_response = response.content.decode('utf8')
         self.assertIn("Konekin Enterprise", html_response)
         self.assertEqual(response.status_code, 200)
+
+    def test_create_company_account_function(self):
+        counting_all_company_account = CompanyAccount.objects.all().count()
+        create_company_account("13597930", "", "", "", "", "", "", "", "", "", "")
+        self.assertEqual(counting_all_company_account, 1)
+
+        counting_all_company_account = CompanyAccount.objects.all().count()
+        create_company_account("12912120", "", "", "", "", "", "", "", "", "", "")
+        self.assertEqual(counting_all_company_account, 2)
