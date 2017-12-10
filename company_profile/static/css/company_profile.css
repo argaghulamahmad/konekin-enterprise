@@ -1,6 +1,20 @@
-.btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
-.btn-labeled {padding-top: 0;padding-bottom: 0;}
-.btn { margin-bottom:10px; }
+.btn-label {
+    position: relative;
+    left: -12px;
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 3px 0 0 3px;
+}
+
+.btn-labeled {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.btn {
+    margin-bottom: 10px;
+}
 
 #company-name {
     color: #2b7a78;
@@ -9,7 +23,6 @@
 #company-industries {
     color: #3aafa9;
 }
-
 
 .jumbotron-billboard .img {
     margin-bottom: 0px;
@@ -20,29 +33,33 @@
     height: 100%;
     background-size: cover;
     overflow: hidden;
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
-.jumbotron h2 {margin-top:0;}
+
+.jumbotron h2 {
+    margin-top: 0;
+}
+
 .jumbotron {
-  position:relative;
-  padding-top:50px;
-  padding-bottom:50px;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
+
 .jumbotron .container {
-  position:relative;
-  z-index:2;
+    position: relative;
+    z-index: 2;
 }
 
 @media screen and (max-width: 768px) {
-  .jumbotron {
-    padding-top:20px;
-    padding-bottom:20px;
-  }
+    .jumbotron {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
-
 
 span.label.label-default {
 }
@@ -116,38 +133,28 @@ u, a {
     color: #2b7a78;
 }
 
-
-body{
-    background-color:#474747;
+#map_container {
+    position: relative;
 }
 
-
-h1{
-  font-size: 45px;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  color:black;
-  margin-bottom: 40px;
-  color: #000;
-  text-shadow: 0 2px 3px #555555;
-  font-family: Tahoma;
-}
-
-
-.container{
-  width: 100%;
-  margin: 0 auto;
-  margin-top:50px;
-}
-
-#map_container{
-  position: relative;
-}
-#map{
+#map {
     height: 0;
     overflow: hidden;
     padding-bottom: 22.25%;
     padding-top: 30px;
     position: relative;
+}
+
+#googleMap {
+    width: 730px;
+    height: 360px;
+    margin: 50px auto 0 auto;
+}
+
+@media (max-width: 767px) {
+    #googleMap {
+        width: 300px;
+        height: 300px;
+        margin: 50px auto 0 auto;
+    }
 }
