@@ -107,3 +107,11 @@ div#submain-area-container.container {
     margin-right: auto;
     margin-left: auto;
 }
+
+u, a {
+    text-decoration: none !important;
+}
+
+.h2-green1 {
+    color: #2b7a78;
+}
