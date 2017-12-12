@@ -47,9 +47,12 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo37aTAL702XPMxvs35KqhxCGQLU3ty8s&callback=initMap"></script>
     <script type="text/javascript" src="{% static "js/company_profile.js" %}"></script>
 {% elif is_company_forum_html %}
-    {#        <link rel="stylesheet" type="text/css" href="{% static 'company_forum.css' %}"/>#}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'company_forum.css' %}"/>#}
+    {#    <script type="text/javascript" src="{% static "js/company_forum.js" %}"></script>#}
 {% elif is_company_login_html %}
-    {#        <link rel="stylesheet" type="text/css" href="{% static 'company_login.css' %}"/>#}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'company_login.css' %}"/>#}
+    {#    <script type="text/javascript" src="{% static "js/company_forum.js" %}"></script>#}
 {% elif is_company_jobs_html %}
-    {#        <link rel="stylesheet" type="text/css" href="{% static 'company_jobs.css' %}"/>#}
+    <link rel="stylesheet" type="text/css" href="{% static 'company_jobs.css' %}"/>
+    <script type="text/javascript" src="{% static "js/company_jobs.js" %}"></script>
 {% endif %}
