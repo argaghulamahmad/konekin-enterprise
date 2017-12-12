@@ -28,6 +28,8 @@ def company_detail(request, id):
 
 def create_company_account(id, name, industries, website, headquarters,
                            year_founded, type, size, specialties, description, logo_url):
+    print(id)
+    print(name)
     CompanyAccount.objects.create(
         company_id=id,
         company_name=name,

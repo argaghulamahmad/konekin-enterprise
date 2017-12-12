@@ -1,6 +1,5 @@
 {% extends "layout/base.html" %} {% load staticfiles %} {% load static %} {% block content %}
 <!-- sign in with linkedin button -->
-<br><br><br><br><br><br>
 <script type="IN/Login"></script>
 
 <script type="text/javascript" src="//platform.linkedin.com/in.js">
@@ -12,152 +11,124 @@
 
 
 <script type="text/javascript">
-    
-  // Setup an event listener to make an API call once auth is complete
-    function onLinkedInLoad() {
-      IN.Event.on(IN, "auth", getCompanyProfileData);
-    }
 
-
-  function getCompanyProfileData(){
-      var cpnyID ="13597930"
-      IN.API.Raw("/companies/" + cpnyID + ":(id,name,ticker,description,company-type,founded-year,locations:(address),website-url,square-logo-url,specialties)?format=json").method("GET").result(displayProfileData).error(onError);
-  }
-
-  function displayProfileData(data){
-      console.log("INI DATA KITA AKHIRNYA");
-      console.log(data);
-
-      console.log(data.name);
-      console.log("=================================");
-
-      console.log("ini company type");
-      console.log(data.companyType);
-
-      console.log("=================================");
-
-      console.log("Deskripsi");
-      console.log(data.description);
-
-      console.log("=================================");
-
-      console.log("Ditemukan pada");
-      console.log(data.foundedYear);
-
-      console.log("=================================");
-
-      console.log("Lokasi Perusahaan");
-    //   console.log(data.locations.values[0]);
-      console.log("Kota : " + data.locations.values[0].address.city);
-      console.log("Kode Pos : " + data.locations.values[0].postalCode);
-      console.log("Jalan : " + data.locations.values[0].street1);
-      
-      console.log("=================================");
-
-      console.log("Konekin Specialties : ");
-      console.log(data.specialties.values[0]);
-      console.log(data.specialties.values[1]);
-      console.log(data.specialties.values[2]);
-
-      console.log("=================================");
-
-      console.log("URL Konekin Logo :");
-      console.log(data.squareLogoUrl);
-
-      console.log("=================================");
-
-      console.log("URL Konekin :");
-      console.log(data.websiteUrl);
-      
-  }
-
-  // Handle the successful return from the API call
-  function onSuccess(data) {
-    console.log("eheheheh");
-    console.log(data);
-  }
-
-
-
-  // Handle an error response from the API call
-  function onError(error) {
-    console.log(error);
-  }
-
-  // Use the API call wrapper to share content on LinkedIn
-  function shareContent() {
-        
-    // Build the JSON payload containing the content to be shared
-    var payload = { 
-      "comment": "Check out developer.linkedin.com! http://linkd.in/1FC2PyG", 
-      "visibility": { 
-        "code": "anyone"
-      } 
-    };
-
-    var cpnyID = 13597930;
-
-    IN.API.Raw("/companies/" + cpnyID + "/shares?format=json")
-      .method("POST")
-      .body(JSON.stringify(payload))
-      .result(onSuccess)
-      .error(onError);
-  }
-
-</script> 
-
-<!-- <script type="text/javascript"> 
     // Setup an event listener to make an API call once auth is complete
     function onLinkedInLoad() {
-        console.log("1");
-        IN.Event.on(IN, "auth", getProfileData);
+        IN.Event.on(IN, "auth", getCompanyProfileData);
     }
 
-    // Use the API call wrapper to request the member's profile data
-    function getProfileData() {
-        console.log("2");
-        IN.API.Profile("me").fields("id", "first-name", "last-name", "headline", "location", "picture-url", "public-profile-url", "email-address").result(displayProfileData).error(onError);
+
+    function getCompanyProfileData() {
+        var cpnyID = "13597930"
+        IN.API.Raw("/companies/" + cpnyID + ":(id,name,ticker,description,company-type,founded-year,locations:(address),website-url,square-logo-url,specialties,industries,employee-count-range,logo-url)?format=json").method("GET").result(displayProfileData).error(onError);
     }
 
-    function onSuccess(data){
-        console.log("ini data");
+
+    function displayProfileData(data) {
+        postData(data)
+        console.log("INI DATA KITA AKHIRNYA");
         console.log(data);
+
+        console.log(data.name);
+        console.log("=================================");
+
+        console.log("ini company type");
+        console.log(data.companyType);
+
+        console.log("=================================");
+
+        console.log("Deskripsi");
+        console.log(data.description);
+
+        console.log("=================================");
+
+        console.log("Ditemukan pada");
+        console.log(data.foundedYear);
+
+        console.log("=================================");
+
+        console.log("Lokasi Perusahaan");
+        //   console.log(data.locations.values[0]);
+        console.log("Kota : " + data.locations.values[0].address.city);
+        console.log("Kode Pos : " + data.locations.values[0].postalCode);
+        console.log("Jalan : " + data.locations.values[0].street1);
+
+        console.log("=================================");
+
+        console.log("Konekin Specialties : ");
+        console.log(data.specialties.values[0]);
+        console.log(data.specialties.values[1]);
+        console.log(data.specialties.values[2]);
+
+        console.log("=================================");
+
+        console.log("URL Konekin Logo :");
+        console.log(data.squareLogoUrl);
+
+        console.log("=================================");
+
+        console.log("URL Konekin :");
+        console.log(data.websiteUrl);
+
+        console.log("==================================");
+
+        console.log("Industries: ");
+        console.log(data.industries.values[0].name);
     }
 
     // Handle the successful return from the API call
-    function displayProfileData(data) {
-        console.log("3");
+    function onSuccess(data) {
+        console.log("eheheheh");
         console.log(data);
-        var user = data.values[0];
-        document.getElementById("picture").innerHTML = '<img src="' + user.pictureUrl + '" />';
-        document.getElementById("name").innerHTML = user.firstName + ' ' + user.lastName;
-        document.getElementById("intro").innerHTML = user.headline;
-        document.getElementById("email").innerHTML = user.emailAddress;
-        document.getElementById("location").innerHTML = user.location.name;
-        document.getElementById("link").innerHTML = '<a href="' + user.publicProfileUrl + '" target="_blank">Visit profile</a>';
-        document.getElementById('profileData').style.display = 'block';
     }
+
+
 
     // Handle an error response from the API call
     function onError(error) {
-        console.log("4");
         console.log(error);
     }
 
-    // Destroy the session of linkedin
-    function logout() {
-        console.log("5");
-        IN.User.logout(removeProfileData);
+    // Use the API call wrapper to share content on LinkedIn
+    function shareContent() {
+
+        // Build the JSON payload containing the content to be shared
+        var payload = {
+            "comment": "Check out developer.linkedin.com! http://linkd.in/1FC2PyG",
+            "visibility": {
+                "code": "anyone"
+            }
+        };
+
+        var cpnyID = 13597930;
+
+        IN.API.Raw("/companies/" + cpnyID + "/shares?format=json")
+            .method("POST")
+            .body(JSON.stringify(payload))
+            .result(onSuccess)
+            .error(onError);
     }
 
-    // Remove profile data from page
-    function removeProfileData() {
-        console.log("6");
-        document.getElementById('profileData').remove();
-    }
-    
-</script> -->
+</script>
 
+<script>
+    var postData = function (data) {
+        $.ajax({
+            method: "POST",
+            url: '{% url "company_login:addCompanyData" %}',
+            data: { data },
+            success: function (data) {
+                id = data['id'];
+                window.open('/company/profile/' + id + '/', '_self');
+                // window.open('https://konekin-enterprise.herokuapp.com/company/profile/' + id)
+                // window.location.replace('localhost:8000/company/profile/' + id);
+                console.log("BERHASIL");
+        
+
+            },
+        })
+    };
+</script>
 
 
 <!-- display profile info -->
