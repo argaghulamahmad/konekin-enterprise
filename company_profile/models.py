@@ -1,6 +1,7 @@
 from django.db import models
 
 class CompanyAccount(models.Model):
+    company_id = models.CharField(max_length=20)
     company_name = models.CharField(max_length=27)
     company_industries = models.CharField(max_length=100)
     company_website = models.URLField()
@@ -10,5 +11,7 @@ class CompanyAccount(models.Model):
     company_size = models.CharField(max_length=100)
     company_specialties = models.CharField(max_length=100)
     company_description = models.TextField()
-    company_logo = models.ImageField('company logo', upload_to='static/media/images/avatars/',
-                                       null=True, blank=True)
+    company_logo = models.URLField()
+
+    def __str__(self):
+        return self.company_name

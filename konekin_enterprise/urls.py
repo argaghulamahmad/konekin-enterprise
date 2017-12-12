@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+import company_profile.urls as company_profile
 import company_login.urls as company_login
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^company_login/', include(company_login, namespace='company_login')),
+    url(r'^company/profile/', include(company_profile, namespace='company-profile')),
     url(r'^$', RedirectView.as_view(url = '/company_login/', permanent = 'true'), name = 'company_login'),
 ]

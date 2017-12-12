@@ -5,28 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        {% block title %} Konekin Enterprise {% endblock %}
+        {% block title %} Konekin Enterprise - {{ sub_title }} {% endblock %}
     </title>
     <meta name="Description" content="Konekin Enterprise - Tugas 2 Kelompok 10b Kelas B Tahun 2017">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}"/>
     <link href=' http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href=' http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/png" href={% static 'img/konekin.ico' %}/>
-
-    {# import stylesheet yang diperlukan, atur di views render var 'is_..'  #}
-    {% if is_company_profile_html %}
-        <link rel="stylesheet" type="text/css" href="{% static 'company_profile.css' %}"/>
-    {% elif is_company_forum_html %}
-        {#        <link rel="stylesheet" type="text/css" href="{% static 'company_forum.css' %}"/>#}
-    {% elif is_company_login_html %}
-        {#        <link rel="stylesheet" type="text/css" href="{% static 'company_login.css' %}"/>#}
-    {% elif is_company_jobs_html %}
-        {#        <link rel="stylesheet" type="text/css" href="{% static 'company_jobs.css' %}"/>#}
-    {% endif %}
-
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.4.1.css">
 </head>
 <header>
     {% include "partials/header.html" %}
@@ -47,7 +38,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="application/javascript"
         src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="application/javascript">
-    {# jika ingin nambahin script js disini letakkan kodenya #}
-    {# atau gunakan folder static di aplikasi anda #}
-</script>
+<script src="https://code.jquery.com/qunit/qunit-2.4.1.js"></script>
+
+{# import stylesheet dan js yang diperlukan, atur di views render var 'is_..'  #}
+{% if is_company_profile_html %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/company_profile.css' %}"/>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo37aTAL702XPMxvs35KqhxCGQLU3ty8s&callback=initMap"></script>
+    <script type="text/javascript" src="{% static "js/company_profile.js" %}"></script>
+{% elif is_company_forum_html %}
+    {#        <link rel="stylesheet" type="text/css" href="{% static 'company_forum.css' %}"/>#}
+{% elif is_company_login_html %}
+    {#        <link rel="stylesheet" type="text/css" href="{% static 'company_login.css' %}"/>#}
+{% elif is_company_jobs_html %}
+    {#        <link rel="stylesheet" type="text/css" href="{% static 'company_jobs.css' %}"/>#}
+{% endif %}

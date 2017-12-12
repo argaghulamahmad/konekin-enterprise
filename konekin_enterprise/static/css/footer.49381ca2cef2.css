@@ -1,0 +1,15 @@
+footer {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    color: #2b7a78;
+    width: 100%;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
