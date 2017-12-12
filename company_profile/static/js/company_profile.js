@@ -31,7 +31,7 @@ window.initMap = function () {
         }
     });
     isInitMapWork = true;
-}
+};
 
 $(document).ready(function () {
     QUnit.test("initMap Function Test", function (assert) {
@@ -42,3 +42,15 @@ $(document).ready(function () {
         assert.equal(isMapMarkerWork, true);
     });
 });
+
+function onLinkedInLoad() {
+    console.log("HEHE");
+    IN.Event.on(IN, "auth", cekUser);
+}
+
+function cekUser() {
+    if (IN.User.isAuthorized()) {
+        console.log(!IN.User.isAuthorized);
+        console.log("MASUKS INI DONG");
+    }
+}
