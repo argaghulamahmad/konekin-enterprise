@@ -6,7 +6,7 @@ import json
 
 
 response = {}
-def index(request): #pragma : no cover
+def index(request):
     # response['author'] = "Claudio Yosafat"
     html = 'company_login/company_login.html'
     #html login
@@ -16,7 +16,7 @@ def index(request): #pragma : no cover
 
 
 @csrf_exempt
-def addCompanyData(request):#pragma: no cover
+def addCompanyData(request)
     print("masuk company data")
     if request.method == 'POST':
         print(request.POST)
@@ -37,3 +37,5 @@ def addCompanyData(request):#pragma: no cover
         create_company_account(company_id,company_name,company_industries,company_website,company_headquarters,company_year_founded,company_type,company_size,company_specialties,company_description,company_logo)
         return JsonResponse(listResponse)
     return HttpResponse()
+
+
