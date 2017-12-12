@@ -14,9 +14,10 @@
             {# button logout dan informasi mengenai user #}
             <ul id="menu-navbar" class="nav navbar-nav navbar-right">
                 {% if is_logged_in %}
-                    {#<p class="navbar-text">Anda Masuk sebagai : {{ user_name }}</p>#}
-                    {# todo tambahkan button logut linkedin disini #}
-                    
+                    <li>
+                        <a href=""><span class="glyphicon glyphicon-log-out"></span>
+                            Logout</a>
+                    </li>
                 {% endif %}
             </ul>
         </div>
