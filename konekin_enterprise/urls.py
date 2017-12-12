@@ -18,7 +18,7 @@ from django.contrib import admin
 import company_profile.urls as company_profile
 import company_login.urls as company_login
 import company_jobs.urls as company_jobs
-# import company_forum.urls as company_forum
+import company_forum.urls as company_forum
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
@@ -26,6 +26,6 @@ urlpatterns = [
     url(r'^company/login/', include(company_login, namespace='company_login')),
     url(r'^company/profile/', include(company_profile, namespace='company-profile')),
     url(r'^company/jobs/', include(company_jobs, namespace='company-jobs')),
-    # url(r'^company/forum/', include(company_forum, namespace='company-forum')),
+    url(r'^company/forum/', include(company_forum, namespace='company-forum')),
     url(r'^$', RedirectView.as_view(url = '/company/login/', permanent = 'true'), name = 'company_login'),
 ]

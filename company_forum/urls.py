@@ -2,5 +2,6 @@ from django.conf.urls import url
 from .views import *
 
 urlpatterns = [
-    #     isi disini
+    url(r'^(?P<id>.*)/$', company_forum, name='company-forum')
+
 ]
