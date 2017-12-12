@@ -150,6 +150,11 @@ ENV/
 #ignore chromedriver
 chromedriver
 chromedriver.exe
+
+#ignore static
 /konekin/static/*
+
+#ignore vscode
+.vscode
 
 # End of https://www.gitignore.io/api/python,intellij+iml
