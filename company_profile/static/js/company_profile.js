@@ -7,7 +7,7 @@ var isMapMarkerWork = false;
 console.log("Company Address: ");
 console.log(address);
 
-function initMap() {
+window.initMap = function () {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({'address': address}, function (results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
@@ -26,7 +26,7 @@ function initMap() {
             var html = '<div class="alert alert-danger text-center">' +
                 'Location Not Found!' +
                 '</div>';
-            $("#googleMap").append(html)
+            $("#googleMap").append(html);
             isMapMarkerWork = true;
         }
     });
