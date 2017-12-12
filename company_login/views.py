@@ -13,10 +13,12 @@ def index(request):
         #panggil fungsi untuk masukin data
         #tembak ke url profile
         response['is_logged_in'] = True
+        response['is_company_login_html'] = True
         return render(request,html,response)
     else:
         #html login
         response['is_logged_in'] = False
+        response['is_company_login_html'] = True
         return render(request,html,response)
 
 
