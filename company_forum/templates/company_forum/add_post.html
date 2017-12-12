@@ -1,0 +1,36 @@
+{% extends "layout/base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .form-control {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .status {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+    <div class="jumbotron jumbotron-fluid text-center"
+         style="margin-bottom: 0px; margin-top: 0px; background-color: #FFFFFF">
+        <div class="container">
+            <img class="rounded-circle" src="{{ logo }}" alt="Perusahaan"
+                 style="width:250px;height:240px;">
+            <h1 class="display-3" style="font-family: Montserrat;padding-top: 20px; color: #2b7a78">Job Forum
+                Discussion</h1>
+            <h1 style="font-family:'Montserrat';text-align: center;color: #3aafa9">{{ company }}</h1>
+
+        </div>
+    </div>
+
+
+
+    <div class="alert alert-danger text-center">
+        <strong>Successfully added.</strong>
+    </div>
+
+    </div>
+{% endblock %}

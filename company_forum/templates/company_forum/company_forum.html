@@ -1,15 +1,104 @@
 {% extends "layout/base.html" %}
 {% load staticfiles %}
 {% load static %}
-{% block content %}
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Forum</title>
-    </head>
-    <body>
 
-    </body>
-    </html>
+{% block content %}
+    <style>
+        .form-control {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .status {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+    <div class="jumbotron jumbotron-fluid text-center"
+         style="margin-bottom: 0px; margin-top: 0px; background-color: #FFFFFF">
+        <div class="container">
+            <img class="rounded-circle" src="{{ logo }}" alt="Perusahaan"
+                 style="width:250px;height:240px;">
+            <h1 class="display-3" style="font-family: Montserrat;padding-top: 20px; color: #2b7a78">Job Forum Discussion</h1>
+            <h1 style="font-family:'Montserrat';text-align: center;color: #3aafa9">{{ company }}</h1>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <hr/>
+        <section name="form">
+            <h1 style="font-family:'Open Sans';text-align: center;padding-top: 20px;padding-bottom:30px; color: #3aafa9">Add Forum Post</h1>
+            <form id="form" method="POST" action="{% url 'company-forum:add_forum' id %}">
+                {% csrf_token %}
+                {{ company_form }}
+                <br>
+                <button type="submit" class="btn btn-primary btn-lg btn-block"
+                        style="background-color: #2b7a78;border-color: #3aafa9">Post
+                </button>
+            </form>
+        </section>
+        <hr/>
+        <h1 style="font-family:'Open Sans';text-align: center; color: #3aafa9;padding-top: 15px;padding-bottom: 30px;">Job Forum</h1>
+
+        {% if forum_list %}
+            <div class="container">
+            {% for data in forum_list %}
+
+                <section name="update-status" id="update-status">
+                    <div class="status">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="rounded-circle" src="{{ logo }}" alt="Perusahaan"
+                                     style="width: 80px;padding-right: 8px">
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading" style="color: #2b7a78">{{ data.title }}</h3>
+                                <h6 style="color: #2b7a78">Posted on {{ data.created_date }}</h6>
+                                {% comment %}<h6 style="color: #2b7a78">Post Id {{ data.companyAccount }}</h6>{% endcomment %}
+                                <p style="color: #3aafa9">{{ data.message }}</p>
+                                {% comment %}<div class="delete" data-id="{{ data.id }}">
+                                <a href="{% url 'forum:clear' object_id=data.id %}"><img
+                                        src="{% static 'image/bin.png' %}"
+                                        style="width: 35px;height 35px; top: 10px;"></a>
+                            </div>{% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-danger text-center">
+                <strong>You have no discussion.</strong> Please add one.
+            </div>
+        {% endif %}
+
+        {% if forum_list.has_other_pages %}
+            <div class="text-center">
+                <ul class="pagination" style="text-align: center">
+                    {% if forum_list.has_previous %}
+                        <li><a href="?page={{ forum_list.previous_page_number }}">&laquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><span>&laquo;</span></li>
+                    {% endif %}
+
+                    {% for i in forum_list.paginator.page_range %}
+                        {% if forum_list.number == i %}
+                            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                        {% else %}
+                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if forum_list.has_next %}
+                        <li><a href="?page={{ forum_list.next_page_number }}">&raquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><span>&raquo;</span></li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

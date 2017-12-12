@@ -7,8 +7,12 @@ class CompanyForum(models.Model):
     companyAccount = models.ForeignKey(CompanyAccount) #get the company you want here
     title = models.CharField(max_length=140)
     message = models.TextField()
-    kode_message = models.CharField("Kode Message", max_length=50)
+    #kode_message = models.CharField("Kode Message", max_length=50)
     created_date = models.DateTimeField(auto_now_add=True)
+
+
+    def __str__(self):
+        return self.companyAccount.company_name
 
 
 class Comment(models.Model):
