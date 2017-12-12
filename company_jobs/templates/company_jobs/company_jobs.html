@@ -1,0 +1,77 @@
+{% extends "layout/base.html" %} {% load staticfiles %} {% load static %}
+
+
+{% block content %}
+<div class="container">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <h1>Lowongan Pekerjaan</h1>
+    <hr>
+       {% if contacts %}
+            {% for forum in company %}
+    <section name="images" class="col-sm-4" >
+            <a href="/company/profile/{{forum.company_id}}/" data-toggle="popover" title="{{ forum.company_name }}" data-content="ancooll">
+            <img src="{{ forum.company_logo }}" style="width:200px;height:200px;border-radius:50%;">
+            </a>
+    </section>
+
+
+    <section name="" class="col-sm-8">  
+    <div class="list-group">
+                <div class="list-group-item clearfix">
+                    <a href="/company/profile/{{forum.company_id}}/">
+                        {{ forum.company_name }} 
+                    </a>
+                    <br>
+                    {{ forum.company_id }}
+                    <br>
+                    {{ forum.inputForum }}
+                    <span>
+                    <div class="comment-section-form">
+                    <div id="output"></div>
+                    {% csrf_token %}
+                    <textarea rows="3" class="input"></textarea>
+                    <br>
+                        <input id="submit" type="submit" class="btn" value="Submit" style="bottom: -10px"> 
+                        <div class="output"></div>
+                    </span>
+                </div>
+            {% endfor %}
+
+    <div class="pagination">
+    <span class="step-links">
+        {% if contacts.has_previous %}
+            <a href="?page={{ contacts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+        </span>
+
+        {% if contacts.has_next %}
+            <a href="?page={{ contacts.next_page_number }}">next</a>
+        {% endif %}
+
+    {% endif %}
+    </span>
+
+    </div>
+
+    </div>
+  </section>
+</div>
+
+{% endblock %}
+
+<script>
+$(document).ready(function(){
+        var msg = $('.input').val();
+        var old = $('.output').html();
+        $('.input').on('click', function(event) {
+            alert('asd')
+            $(".output").html(msg+"<br><div class='output'></div>")
+            $(".input").val("")
+        }
+});
+
+</script>
