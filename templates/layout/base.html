@@ -18,6 +18,14 @@
     <link href=' http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/png" href={% static 'img/konekin.ico' %}/>
     <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.4.1.css">
+
+    <script type="text/javascript" src="//platform.linkedin.com/in.js">
+        api_key: 78z1y23eusl2sd
+        authorize: true
+        onLoad: onLinkedInLoad
+        scope: r_basicprofile r_emailaddress rw_company_admin
+    </script>
+    
 </head>
 <header>
     {% include "partials/header.html" %}

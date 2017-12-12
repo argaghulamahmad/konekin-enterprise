@@ -6,24 +6,17 @@ import json
 
 
 response = {}
-def index(request):    
+def index(request): #pragma : no cover
     # response['author'] = "Claudio Yosafat"
     html = 'company_login/company_login.html'
-    if 'user_login' in request.session:
-        #panggil fungsi untuk masukin data
-        #tembak ke url profile
-        response['is_logged_in'] = True
-        response['is_company_login_html'] = True
-        return render(request,html,response)
-    else:
-        #html login
-        response['is_logged_in'] = False
-        response['is_company_login_html'] = True
-        return render(request,html,response)
+    #html login
+    response['is_logged_in'] = False
+    response['is_company_login_html'] = True
+    return render(request,html,response)
 
 
 @csrf_exempt
-def addCompanyData(request):
+def addCompanyData(request):#pragma: no cover
     print("masuk company data")
     if request.method == 'POST':
         print(request.POST)
