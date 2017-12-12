@@ -22,6 +22,7 @@ def index(request):
 def addCompanyData(request):
     print("masuk company data")
     if request.method == 'POST':
+        print(request.POST)
         id = request.POST['data[id]']
         print(request.POST['data[name]'])
         company_id = id

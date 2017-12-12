@@ -3,5 +3,5 @@ from .views import index,addCompanyData
 
 urlpatterns = [
     url(r'^$', index, name='index'),
-    url(r'^company_data', addCompanyData, name= 'addCompanyData'),
+    url(r'^company/data', addCompanyData, name= 'addCompanyData'),
 ]
