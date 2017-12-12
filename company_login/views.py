@@ -16,7 +16,7 @@ def index(request):
 
 
 @csrf_exempt
-def addCompanyData(request)
+def addCompanyData(request):
     print("masuk company data")
     if request.method == 'POST':
         print(request.POST)
