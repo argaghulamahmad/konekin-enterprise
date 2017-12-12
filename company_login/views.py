@@ -12,9 +12,11 @@ def index(request):
     if 'user_login' in request.session:
         #panggil fungsi untuk masukin data
         #tembak ke url profile
+        response['is_logged_in'] = True
         return render(request,html,response)
     else:
         #html login
+        response['is_logged_in'] = False
         return render(request,html,response)
 
 

@@ -22,6 +22,7 @@ def company_detail(request, id):
     response['company_description'] = selected_company.company_description
     response['company_logo'] = selected_company.company_logo
     response['is_company_profile_html'] = True
+    response['is_logged_in'] = True
 
     return render(request, html, response)
 
