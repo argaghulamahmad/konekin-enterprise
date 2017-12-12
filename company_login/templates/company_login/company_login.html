@@ -2,12 +2,12 @@
 <!-- sign in with linkedin button -->
 <script type="IN/Login"></script>
 
-<script type="text/javascript" src="//platform.linkedin.com/in.js">
+<!-- <script type="text/javascript" src="//platform.linkedin.com/in.js">
     api_key: 78z1y23eusl2sd
     authorize: true
     onLoad: onLinkedInLoad
     scope: r_basicprofile r_emailaddress rw_company_admin
-</script>
+</script> -->
 
 
 <script type="text/javascript">
@@ -120,7 +120,7 @@
             success: function (data) {
                 id = data['id'];
                 window.open('/company/profile/' + id + '/', '_self');
-                // window.open('https://konekin-enterprise.herokuapp.com/company/profile/' + id)
+                // window.open('https://konekin-enterprise.herokuapp.com/company/profile/' + id + '/', '_self')'' 
                 // window.location.replace('localhost:8000/company/profile/' + id);
                 console.log("BERHASIL");
         

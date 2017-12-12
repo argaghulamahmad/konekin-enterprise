@@ -2,6 +2,19 @@
 {% load staticfiles %}
 {% load static %}
 {% block content %}
+<script>
+    function onLinkedInLoad() {
+        console.log("HEHE");
+        IN.Event.on(IN, "auth", cekUser);
+    }
+    function cekUser(){
+        if(IN.User.isAuthorized()){
+        console.log(!IN.User.isAuthorized);
+        console.log("MASUKS INI DONG");
+        // window.open('/company/login/', '_self');
+    }
+    }
+</script>
     <div id="qunit" hidden></div>
     <div class="container" id="main-area-container">
         <div class="col-md-4 col-xs-6 col-centered" id="company-logo-area">
@@ -12,7 +25,7 @@
             <h1 id="company-name">{{ company_name }}</h1>
             <div id="main-info-area">
                 <p id="company-industries" class="text-left">{{ company_industries }}</p>
-                <div>
+                <div>x
                     <button onclick="window.open('{{ url_company_forum }}', '_self');" type="button" class="btn btn-labeled btn-info">
                         <span class="btn-label"><i class="fa fa-users" aria-hidden="true"></i></span> See Forum
                     </button>
