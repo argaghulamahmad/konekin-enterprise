@@ -32,7 +32,7 @@ def addCompanyData(request):
         company_headquarters=request.POST['data[locations][values][0][address][city]']
         company_year_founded=request.POST['data[foundedYear]']
         company_type=request.POST['data[companyType][name]']
-        company_size=request.POST['data[employeeCountRange][name]'] + "employees"
+        company_size=request.POST['data[employeeCountRange][name]'] + " employees"
         company_specialties=request.POST['data[specialties][values][]']
         company_description=request.POST['data[description]']
         company_logo=request.POST['data[squareLogoUrl]']
