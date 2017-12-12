@@ -11,12 +11,14 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 response = {}
 
+
 def company_forum(request, id):
     print(id)
+    print(id[-8:])
 
     count = CompanyAccount.objects.count()
     print(count)
-    selected_company = CompanyAccount.objects.get(company_id=id)
+    selected_company = CompanyAccount.objects.get(company_id=id[-8:])
     print(selected_company.company_id)
 
     forum = CompanyForum.objects.filter(companyAccount=selected_company)
@@ -47,7 +49,9 @@ def company_forum(request, id):
     html = "company_forum/company_forum.html"
     return render(request, html, response)
 
+
 def add_forum(request, id):
+    print(id)
 
     form = Forum_Form(request.POST or None)
 
@@ -59,7 +63,8 @@ def add_forum(request, id):
         response['title'] = request.POST['title']
         response['message'] = request.POST['post']
 
-        forumpost = CompanyForum(companyAccount=response['CompanyAccount'],title=response['title'], message=response['message']) #model
+        forumpost = CompanyForum(companyAccount=response['CompanyAccount'], title=response['title'],
+                                 message=response['message'])  # model
         forumpost.save()
 
         # html = "company_forum/add_post.html"
@@ -87,5 +92,5 @@ def paginate_page(page, data_list):
     # Get our new page range. In the latest versions of Django page_range returns
     # an iterator. Thus pass it to list, to make our slice possible again.
     page_range = list(paginator.page_range)[start_index:end_index]
-    paginate_data = {'data':data, 'page_range':page_range}
+    paginate_data = {'data': data, 'page_range': page_range}
     return paginate_data
