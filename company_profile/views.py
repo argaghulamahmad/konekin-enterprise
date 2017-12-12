@@ -29,7 +29,7 @@ def company_detail(request, id):
 def create_company_account(id, name, industries, website, headquarters,
                            year_founded, type, size, specialties, description, logo_url):
     count = CompanyAccount.objects.filter(company_id=id).count()
-    if (count == 1):
+    if (not (count == 1)):
         CompanyAccount.objects.create(
             company_id=id,
             company_name=name,
