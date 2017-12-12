@@ -44,13 +44,11 @@ $(document).ready(function () {
 });
 
 function onLinkedInLoad() {
-    console.log("HEHE");
     IN.Event.on(IN, "auth", cekUser);
 }
 
 function cekUser() {
     if (IN.User.isAuthorized()) {
         console.log(!IN.User.isAuthorized);
-        console.log("MASUKS INI DONG");
     }
 }
