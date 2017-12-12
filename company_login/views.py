@@ -6,7 +6,7 @@ import json
 
 
 response = {}
-def index(request):
+def index(request):#pragma: no cover
     # response['author'] = "Claudio Yosafat"
     html = 'company_login/company_login.html'
     #html login
@@ -16,7 +16,7 @@ def index(request):
 
 
 @csrf_exempt
-def addCompanyData(request):
+def addCompanyData(request):#pragma: no cover
     print("masuk company data")
     if request.method == 'POST':
         print(request.POST)
