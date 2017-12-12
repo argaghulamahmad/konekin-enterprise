@@ -29,7 +29,7 @@ def company_detail(request, id):
 def create_company_account(id, name, industries, website, headquarters,
                            year_founded, type, size, specialties, description, logo_url):
     count = CompanyAccount.objects.filter(company_id=id).count()
-    if (not (count == 1)):
+    if (count == 0):
         CompanyAccount.objects.create(
             company_id=id,
             company_name=name,
@@ -44,5 +44,25 @@ def create_company_account(id, name, industries, website, headquarters,
             company_logo=logo_url,
         )
         print("Account with " + id + ' created.')
-    else:
-        print("Account with " + id + ' exist.')
+    elif (count != 0):
+        existAccount = CompanyAccount.objects.get(company_id=id)
+        if (industries != existAccount.company_industries):
+            existAccount.company_industries = industries
+        if (website != existAccount.company_website):
+            existAccount.company_website = website
+        if (headquarters != existAccount.company_headquarters):
+            existAccount.company_headquarters = headquarters
+        if (year_founded != existAccount.company_year_founded):
+            existAccount.company_year_founded = year_founded
+        if (type != existAccount.company_type):
+            existAccount.company_type = type
+        if (size != existAccount.company_size):
+            existAccount.company_size = size
+        if (specialties != existAccount.company_specialties):
+            existAccount.company_specialties = specialties
+        if (description != existAccount.company_description):
+            existAccount.company_description = description
+        if (logo_url != existAccount.company_logo):
+            existAccount.company_logo = logo_url
+        existAccount.save()
+        print("Account with " + id + ' has been updated.')
