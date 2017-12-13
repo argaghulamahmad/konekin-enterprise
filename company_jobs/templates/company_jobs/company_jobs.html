@@ -9,35 +9,35 @@
     <hr>
        {% if contacts %}
             {% for forum in company %}
+                
     <section name="images" class="col-sm-4" >
             <a href="/company/profile/{{forum.company_id}}/" data-toggle="popover" title="{{ forum.company_name }}" data-content="ancooll">
             <img src="{{ forum.company_logo }}" style="width:200px;height:200px;border-radius:50%;">
             </a>
     </section>
-
-
     <section name="" class="col-sm-8">  
     <div class="list-group">
                 <div class="list-group-item clearfix">
                     <a href="/company/profile/{{forum.company_id}}/">
-                        {{ forum.company_name }} 
+                        {{ forum.company_name }} <br>
                     </a>
+                    {% endfor %}
+                    {% if kerja %}
+                    {% for work in kerja %}
                     <br>
-                    {{ forum.company_id }}
+                    {{ work.title }}
                     <br>
-                    {{ forum.inputForum }}
-                    <span>
+                    {{ work.message }}
                     <div class="comment-section-form">
                     <div id="output"></div>
                     {% csrf_token %}
                     <textarea rows="3" class="input"></textarea>
                     <br>
-                        <input id="submit" type="submit" class="btn" value="Submit" style="bottom: -10px"> 
-                        <div class="output"></div>
-                    </span>
                 </div>
+                 <input id="submit" type="submit" class="btn" value="Submit" style="bottom: -10px"> 
+                        <div class="output"></div>
             {% endfor %}
-
+            {% endif %}
     <div class="pagination">
     <span class="step-links">
         {% if contacts.has_previous %}
