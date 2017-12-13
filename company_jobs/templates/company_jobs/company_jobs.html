@@ -61,17 +61,17 @@
   </section>
 </div>
 
-{% endblock %}
-
 <script>
 $(document).ready(function(){
-        var msg = $('.input').val();
-        var old = $('.output').html();
-        $('.input').on('click', function(event) {
-            alert('asd')
+    alert("aasd");
+        $('#submit').click(function(){
+            var msg = $('.input').val();
+            var old = $('.output').html();
             $(".output").html(msg+"<br><div class='output'></div>")
             $(".input").val("")
-        }
+        });
+
 });
 
 </script>
+{% endblock %}

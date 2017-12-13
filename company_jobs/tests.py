@@ -17,3 +17,7 @@ class Lab5UnitTest(TestCase):
 	def test_page_not_integer(self):
 		response = Client().get('/lab-7/?page=ancol')
 		self.assertNotEqual(response.status_code,200)
+
+	def test_page_so_much(self):
+		response = Client().get('/lab-7/?page=2000')
+		self.assertEqual(response.status_code,404)
