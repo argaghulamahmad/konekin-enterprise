@@ -27,7 +27,11 @@ class CompanyProfileAppTest(TestCase):
             title = "Test",
             message = "1. Web Dev"
         )
-
+        #
+        # for x in range(2, 10):
+        #     a = CompanyForum(companyAccount=self.company, title='Jobs',
+        #                 message='Test')
+        #     a.save()
 
 
     def test_model_company_account(self):
@@ -58,3 +62,32 @@ class CompanyProfileAppTest(TestCase):
     #     self.assertEqual(existAccount2.company_specialties, "specialties")
     #     self.assertEqual(existAccount2.company_description, "description")
     #     self.assertEqual(existAccount2.company_logo, "logo")
+
+    def test_paginator(self):
+        paginator = Paginator(CompanyForum.objects.all(), 5)
+        self.assertEqual(1, paginator.count)
+        self.assertEqual(1, paginator.num_pages)
+        self.assertEqual([1], list(paginator.page_range))
+
+    def test_empty_page(self):
+        paginator = Paginator(CompanyForum.objects.all(), 5)
+        self.assertRaises(EmptyPage, paginator.page, 0)
+        self.assertRaises(EmptyPage, paginator.page, 2)
+
+        # Empty paginators with allow_empty_first_page=True.
+        paginator = Paginator(CompanyForum.objects.filter(title="Test2"), 5,
+                              allow_empty_first_page=True)
+        self.assertEqual(0, paginator.count)
+        self.assertEqual(1, paginator.num_pages)
+        self.assertEqual([1], list(paginator.page_range))
+
+        # Empty paginators with allow_empty_first_page=False.
+        paginator = Paginator(CompanyForum.objects.filter(title="Test2"), 5,
+                              allow_empty_first_page=False)
+        self.assertEqual(0, paginator.count)
+        self.assertEqual(0, paginator.num_pages)
+        self.assertEqual([], list(paginator.page_range))
+
+    def test_invalid_page(self):
+        paginator = Paginator(CompanyForum.objects.all(), 5)
+        self.assertRaises(PageNotAnInteger, paginator.page, 'a')
