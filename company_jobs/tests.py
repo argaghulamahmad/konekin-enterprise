@@ -13,3 +13,7 @@ class Lab5UnitTest(TestCase):
 	def test_using_index_func(self):
 		found = resolve('/company/jobs/')
 		self.assertEqual(found.func, index)
+
+	def test_page_not_integer(self):
+		response = Client().get('/lab-7/?page=ancol')
+		self.assertNotEqual(response.status_code,200)
