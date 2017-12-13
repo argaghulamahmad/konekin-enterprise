@@ -30,7 +30,7 @@
         <hr/>
         <section name="form">
             <h1 style="font-family:'Open Sans';text-align: center;padding-top: 20px;padding-bottom:30px; color: #3aafa9">Add Forum Post</h1>
-            <form id="form" method="POST" action="{% url 'company-forum:add_forum' id %}">
+            <form id="form" method="POST" action="{% url 'company-forum:add-forum' id %}">
                 {% csrf_token %}
                 {{ company_form }}
                 <br>
