@@ -22,7 +22,7 @@ def company_detail(request, id):
     response['company_description'] = selected_company.company_description
     response['company_logo'] = selected_company.company_logo
     response['url_company_forum'] = '/company/forum/' + id + '/'
-    response['url_company_jobs'] = '/company/jobs/' + id + '/'
+    response['url_company_jobs'] = '/company/jobs/'
     response['is_company_profile_html'] = True
     response['is_logged_in'] = True
 
